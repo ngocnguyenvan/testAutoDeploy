@@ -1,0 +1,48 @@
+@import "../../../../assets/styles/default.less";
+.lead-add {
+	padding: 15px;
+
+	.field-group {
+		margin-bottom: 20px;
+	}
+
+	.main {
+		display: flex;
+		align-items: stretch;
+		margin-bottom: 15px;
+	}
+}
+
+@media all and (max-width: 699px) {
+	.lead-add {
+		.main {
+			flex-direction: column;
+			.item {
+				width: 100%;
+				margin-bottom: 15px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 700px) {
+	.lead-add {
+		.main {
+			flex-direction: row;
+			.item {
+				width: 50%;
+				margin-bottom: 0;
+				margin-right: 15px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+

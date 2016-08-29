@@ -1,0 +1,84 @@
+@import '../../../assets/styles/functions.less';
+@import '../../../assets/styles/variables.less';
+
+.composite-container {
+	position: relative;
+	padding: 27px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.form-fields-material {
+
+	.field-group {
+		position: relative;
+		vertical-align: top;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	.message-bin {
+		padding: 0 0 12px 0;
+		color: red;
+	}
+
+	.footer {
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	&.large {
+		font-size: 18px;
+		line-height: 18px;
+	}
+}
+
+.form-control-textfield {
+	margin-top: -14px;
+}
+
+.form-control-checkbox {
+	margin-top: -3px;
+}
+
+.form-control-select {
+	margin-bottom: -14px;
+}
+
+.form-control-tags-input {
+
+	.textbox-wrapper {
+		margin-bottom: 14px;
+
+		.react-tagsinput-input {
+			width: 100%;
+		}
+	}
+
+	.react-tagsinput-tag {
+		position: relative;
+		background-color: @buttonGreen;
+		border-radius: @blockBorderRadius;
+		color: @buttonGreenText;
+		display: inline-block;
+		font-weight: 300;
+		font-size: 17px;
+		margin-bottom: 8px;
+		margin-right: 8px;
+		padding: 17px 34px;
+
+		.remove-btn {
+			cursor: pointer;
+			position: absolute;
+			top: 1px;
+			right: 1px;
+			transform: rotate(45deg) !important;
+			-webkit-transform: rotate(45deg) !important;
+			-moz-transform: rotate(45deg) !important;
+			-ms-transform: rotate(45deg) !important;
+		}
+	}
+}
+
+

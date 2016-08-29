@@ -1,0 +1,68 @@
+@import '../../../assets/styles/functions.less';
+@import '../../../assets/styles/variables.less';
+
+.lead-sessions-list {
+	.lead-sessions-list-header {
+		.column5 {
+			width: 80px !important;
+		}
+	}
+
+	.lead-sessions-list-body {
+		.column5 {
+			width: 80px !important;
+		}
+	}
+}
+
+/* iPhone 6 */
+@media screen and (max-width: 667px) {
+	.lead-sessions-list {
+		.lead-sessions-list-header {
+			.column5 {
+				width: 70px !important;
+			}
+		}
+
+		.lead-sessions-list-body {
+			.column5 {
+				width: 70px !important;
+			}
+		}
+	}
+}
+
+/* iPhone 6 portrait */
+@media screen and (max-width: 433px) {
+	.lead-sessions-list {
+		.lead-sessions-list-header {
+			.column1 {
+				width: 100px;
+			}
+
+			.column2 {
+				width: 75px;
+			}
+
+			.column5 {
+				width: 50px !important;
+			}
+		}
+
+		.lead-sessions-list-body {
+			.column1 {
+				width: 100px;
+				overflow: visible !important;
+			}
+
+			.column2 {
+				width: 75px;
+			}
+
+			.column5 {
+				width: 50px !important;
+				padding-left: 0 !important;
+			}
+		}
+	}
+}

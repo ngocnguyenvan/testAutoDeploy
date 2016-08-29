@@ -1,0 +1,59 @@
+.vertical-center-absolute,
+.vertical-center-relative,
+.vertical-center {
+	position: absolute;
+	top: 50%;
+	.transform(translateY(-50%));
+}
+
+.vertical-center-relative {
+	position: relative;
+}
+
+.horizontal-center-absolute,
+.horizontal-center-relative,
+.horizontal-center {
+	position: absolute;
+	left: 50%;
+	.transform(translateX(-50%));
+	width: 100%;
+}
+
+.horizontal-center-relative {
+	position: relative;
+}
+
+.vertical-center-parent,
+.horizontal-center-parent {
+	position: relative;
+}
+
+.magic-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	.transform(translateY(-50%) translateX(-50%));
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.pull-right {
+    text-align: right;
+}
+
+.pull-left {
+    text-align: right;
+}
+
+.buttons-top-right {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	z-index: 2;
+}

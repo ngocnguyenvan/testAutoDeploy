@@ -1,0 +1,29 @@
+@import '../../../../assets/styles/variables.less';
+@import '../../../../assets/styles/functions.less';
+
+.left-nav {
+
+	.logo {
+		margin: auto;
+		width: 80%;
+		padding: 12px 0 12px 0;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.menu-item {
+
+		&.active:not(:hover) {
+			background: @offWhite !important;
+		}
+
+	}
+
+	ul.footer {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+	}
+}

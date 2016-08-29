@@ -1,0 +1,71 @@
+@import '../../../assets/styles/functions.less';
+@import '../../../assets/styles/variables.less';
+
+.lead-search-list {
+	.lead-search-list-header {
+		.column2 {
+			width: 210px;
+		}
+		.column3 {
+			width: 90px;
+		}
+	}
+
+	.lead-search-list-body {
+		.row-standard {
+			.column2 {
+				width: 140px;
+			}
+			.column3 {
+				width: 130px;
+				padding-left: 63px !important;
+			}
+		}
+		.row-featured {
+			.column2 {
+				width: 140px;
+			}
+			.column3 {
+				width: 130px;
+				padding-right: 10px !important;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 533px) {
+	.lead-search-list-block .header {
+		padding-right: 150px !important;
+	}
+}
+
+/* iPhone 6 */
+@media screen and (max-width: 667px) {
+	.lead-search-list {
+		.lead-search-list-header {
+			.column2 {
+				width: 110px;
+			}
+		}
+
+		.lead-search-list-body {
+			.row-standard {
+				.column2 {
+					width: 100px;
+				}
+				.column3 {
+					width: 100px;
+					padding-left: 33px !important;
+				}
+			}
+			.row-featured {
+				.column2 {
+					width: 100px;
+				}
+				.column3 {
+					width: 100px;
+				}
+			}
+		}
+	}
+}

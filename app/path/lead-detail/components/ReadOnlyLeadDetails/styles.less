@@ -1,0 +1,115 @@
+@import '../../../../assets/styles/functions.less';
+@import '../../../../assets/styles/variables.less';
+
+.page-leads .lead-details {
+	padding: 15px;
+}
+
+.lead-details {
+	.left-column {
+		width: 247px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.right-column {
+		width: ~"calc(100% - 247px)";
+		min-width: 683px;
+		padding-left: 13px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.lead-details-cell {
+		position: relative;
+		margin-bottom: 18px;
+		margin-right: 15px;
+		width: 100%;
+		display: inline-block;
+
+		&.half {
+			margin-right: 14px;
+			width: ~"calc(50% - 7px)";
+		}
+
+		&.last {
+			margin-bottom: 0;
+			margin-right: 0;
+		}
+
+		.profileCard {
+			.row {
+				width: 100%;
+				margin-bottom: 8px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.title {
+					float: left;
+					font-weight: 600;
+					margin-right: 4px;
+				}
+
+				.value {
+					float: left;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				.value-break-word {
+					overflow-wrap: break-word;
+					word-wrap: break-word;
+					word-break: break-word;
+					width: 211px;
+				}
+			}
+
+			.row-divider {
+				height: 12px;
+			}
+		}
+
+		.summary-value {
+			font-size: 36px;
+			font-weight: 500;
+			line-height: 1;
+			margin-top: 8px;
+			color: @ylopoGreen;
+		}
+	}
+}
+
+/* Mobile */
+@media screen and (max-width: 960px) {
+	.lead-details {
+		.left-column {
+			width: 100%;
+			min-width: initial;
+		}
+		.right-column {
+			width: 100%;
+			padding-left: 0;
+			min-width: initial;
+		}
+	}
+}
+
+.sized-email {
+	display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 205px;
+    position: relative;
+    &:after {
+    	content: '';
+	    position: absolute;
+	    right: 0; top: 0;
+	    width: 40px;
+	    height: 100%;
+	    background: -moz-linear-gradient(left, rgba(255,255,255, 0.2), #fff 100%);
+	    background: -webkit-linear-gradient(left, rgba(255,255,255, 0.2), #fff 100%);
+	    background: -o-linear-gradient(left, rgba(255,255,255, 0.2), #fff 100%);
+	    background: -ms-linear-gradient(left, rgba(255,255,255, 0.2), #fff 100%);
+	    background: linear-gradient(to right, rgba(255,255,255, 0.2), #fff 100%);
+    }
+}

@@ -1,0 +1,47 @@
+{
+	"id": 5,
+	"created": "2016-01-22T00:25:53Z",
+	"updated": "2016-04-24T16:08:44Z",
+	"lastActivity": "2016-04-24T16:08:44Z",
+	"name": "Testing McTesterson",
+	"firstName": "Testing",
+	"lastName": "McTesterson",
+	"stage": "Contact",
+	"source": "Ylopo",
+	"sourceUrl": "http://stars.ylopo.com/lead-detail/de6399ed-884a-4497-8415-3785c70a05ed",
+	"contacted": 0,
+	"price": 1050000,
+	"assignedLenderId": null,
+	"assignedLenderName": null,
+	"assignedUserId": 1,
+	"assignedTo": "Ge Juefeng",
+	"tags": [
+		"48105",
+		"80218",
+		"80220",
+		"80231",
+		"85718",
+		"90402",
+		"Ann Arbor",
+		"Bounced",
+		"Denver",
+		"Santa Monica",
+		"Tucson"
+	],
+	"emails": [
+		{
+			"value": "test_fa7bb0e9eab2334e5c0ca545e4c6e31e35aad79198e0d5f458ee5dc28ea0ba8b@test.ylopo.com",
+			"type": "home",
+			"isPrimary": 1
+		}
+	],
+	"phones": [
+		{
+			"value": "6546542382",
+			"type": "home",
+			"isPrimary": 1
+		}
+	],
+	"addresses": [],
+	"picture": null
+}

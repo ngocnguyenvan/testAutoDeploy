@@ -1,0 +1,37 @@
+@import '../../../../../assets/styles/functions.less';
+@import '../../../../../assets/styles/variables.less';
+
+.amenity-icon {
+	height: 100px;
+	margin-top: 15px;
+	.displayFlex();
+	.flexFlow(column, nowrap);
+	.justifyContent(flex-end);
+	.alignItems(center);
+	.icon {
+		width: 60px;
+		height: 60px;
+		margin-bottom: 5px;
+		background-color: rgb(200, 200, 200);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 60%;
+		border-radius: 100px;
+		cursor: pointer;
+		@media (min-width: 768px) {
+			width: 75px;
+			height: 75px;
+			background-size: auto;
+		}
+		&.active {
+			background-color: @ylopoGreen;
+		}
+	}
+	.amenity-label {
+		font-size: 14px;
+		white-space: nowrap;
+		@media (min-width: 480px) {
+			font-size: 16px;
+		}
+	}
+}

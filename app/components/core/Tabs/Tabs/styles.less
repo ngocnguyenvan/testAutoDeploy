@@ -1,0 +1,31 @@
+@import '../../../../assets/styles/functions.less';
+@import '../../../../assets/styles/variables.less';
+
+/* iPhone 6 */
+@media screen and (max-width: 667px) {
+	.tabs {
+		& > div:first-child {
+			white-space: normal !important;
+		}
+
+		.tab {
+			width: 100%;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid @blockBorder !important;
+			}
+
+			&:not(:first-child):not(:last-child) {
+				border-radius: 0 !important;
+			}
+
+			&:last-child {
+				border-top-left-radius: 0 !important;
+				border-top-right-radius: 0 !important;
+				border-bottom-left-radius: @blockBorderRadius;
+				border-bottom-right-radius: @blockBorderRadius;
+				margin-bottom: 15px !important;
+			}
+		}
+	}
+}

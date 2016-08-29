@@ -1,0 +1,57 @@
+@import '../../../assets/styles/functions.less';
+@import '../../../assets/styles/variables.less';
+
+.lead-listings-favorite-list {
+	.lead-listings-favorite-list-header {
+		.column1 {
+			width: 150px;
+		}
+		.column4 {
+			width: 80px !important;
+		}
+	}
+
+	.lead-listings-favorite-list-body {
+		.column1 {
+			width: 150px;
+		}
+		.column4 {
+			width: 80px !important;
+		}
+	}
+}
+
+/* iPhone 6 */
+@media screen and (max-width: 667px) {
+	.lead-listings-favorite-list {
+		.lead-listings-favorite-list-header {
+			.column4 {
+				width: 70px !important;
+			}
+		}
+
+		.lead-listings-favorite-list-body {
+			.column4 {
+				width: 70px !important;
+			}
+		}
+	}
+}
+
+/* iPhone 6 portrait */
+@media screen and (max-width: 433px) {
+	.lead-listings-favorite-list {
+		.lead-listings-favorite-list-header {
+			.column1 {
+				width: 90px;
+			}
+		}
+
+		.lead-listings-favorite-list-body {
+			.column1 {
+				width: 90px;
+				overflow: visible !important;
+			}
+		}
+	}
+}

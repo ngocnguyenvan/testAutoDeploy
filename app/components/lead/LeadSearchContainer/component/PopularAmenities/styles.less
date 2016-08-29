@@ -1,0 +1,20 @@
+@import '../../../../../assets/styles/functions.less';
+@import '../../../../../assets/styles/variables.less';
+.popular-amenities {
+	.amenities-wrapper {
+		.displayFlex();
+		.flexFlow(row, wrap);
+		.amenity-icon {
+			width: 50%;
+			@media(min-width: 480px) {
+				width: 33.33%;
+			}
+			@media(min-width: 768px) {
+				width: 25%;
+			}
+			@media(min-width: 900px) {
+				width: 16.66%;
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+@import '../../../../../assets/styles/functions.less';
+@import '../../../../../assets/styles/variables.less';
+
+@maxImageWidth: 222px;
+
+.upload-field {
+
+	.dropzone {
+		border-width: 2px;
+		border-color: black;
+		border-style: dashed;
+		border-radius: 4px;
+		min-width: @maxImageWidth;
+		min-height: 101px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&.error {
+			color: #f44336;
+			border-color: #f44336;
+		}
+
+		&.dropzone-img {
+			display: inline-block;
+			width: auto;
+			height: auto;
+
+			img {
+				max-width: @maxImageWidth
+			}
+		}
+
+		&.dropzone-text {
+			padding: 20px;
+			width: 220px;
+		}
+	}
+
+	.reset-btn {
+		vertical-align: top;
+	}
+}

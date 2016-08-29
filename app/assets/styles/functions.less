@@ -1,0 +1,102 @@
+.transition( @transition ) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	transition: @transition;
+}
+
+.transform( @transform ) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	-o-transform: @transform;
+	transform: @transform;
+}
+
+.transform-scale( @scale ) {
+	-webkit-transform: scale( @scale );
+	-moz-transform: scale( @scale );
+	-ms-transform: scale( @scale );
+	-o-transform: scale( @scale );
+	transform: scale( @scale );
+}
+
+
+/*
+	FlexBox Vendor Prefix Functions
+ */
+.displayFlex() {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.displayInlineFlex() {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+.flex( @flexGrow, @flexShrink, @flexBasis ) {
+	.flexGrow( @flexGrow );
+	.flexShrink( @flexShrink );
+	.flexBasis( @flexBasis );
+	-ms-flex: @flexGrow, @flexShrink, @flexBasis;
+}
+
+.flexBasis( @flexBasis ) {
+	-webkit-flex-basis: @flexBasis;
+	-ms-flex-preferred-size: @flexBasis;
+	flex-basis: @flexBasis;
+}
+
+.flexGrow( @flexGrow ) {
+	-webkit-flex-grow: @flexGrow;
+	-ms-flex-positive: @flexGrow;
+	flex-grow: @flexGrow;
+}
+
+.flexShrink( @flexShrink ) {
+	-webkit-flex-shrink: @flexShrink;
+	-ms-flex-negative: @flexShrink;
+	flex-shrink: @flexShrink;
+}
+
+.flexDirection( @direction ) {
+	-webkit-flex-direction: @direction;
+	flex-direction: @direction;
+}
+
+.flexFlow( @direction, @wrap ) {
+	-webkit-flex-flow: @direction @wrap;
+	-ms-flex-flow: @direction @wrap;
+	flex-flow: @direction @wrap;
+}
+
+.alignItems( @alignment ) {
+	-webkit-box-align: @alignment;
+	-webkit-align-items: @alignment;
+	-ms-flex-align: @alignment;
+	align-items: @alignment;
+}
+
+.background-size( @type ) {
+	-webkit-background-size: @type;
+	-moz-background-size: @type;
+	-o-background-size: @type;
+	background-size: @type;
+}
+
+.justifyContent( @alignement ) {
+	-webkit-box-pack: @alignement;
+	-webkit-justify-content: @alignement;
+	-ms-flex-pack: @alignement;
+	justify-content: @alignement
+}
+
+.alignContent( @alignement ) {
+	-webkit-align-content: @alignement;
+	-ms-flex-line-pack: @alignement;
+	align-content: @alignement
+}

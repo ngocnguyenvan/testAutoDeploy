@@ -1,0 +1,196 @@
+@import '../../../assets/styles/functions.less';
+@import '../../../assets/styles/variables.less';
+
+.box-search * {
+	-webkit-box-search-sizing: border-box-search;
+	-moz-box-search-sizing: border-box-search;
+	box-search-sizing: border-box-search;
+}
+.box-search .box-header {
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+.box-search .box-title {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.1;
+}
+.box-search .step-title {
+	font-size: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	line-height: 1.1;
+}
+.box-search .box-header,
+.box-search .box-body {
+	padding: 20px;
+}
+@media (min-width: 768px) {
+	.box-search .box-header,
+	.box-search .box-body {
+		padding: 20px 30px;
+	}
+}
+.box-search .box-step {
+	background: #f8f6fa;
+	padding: 15px;
+}
+@media (min-width: 768px){
+	.box-search .box-step {
+		padding: 15px 30px;
+	}
+}
+.box-search label {
+	color: @ylopoGreen;
+	margin-bottom: 15px;
+	font-weight: 700;
+	display: inline-block;
+	max-width: 100%;
+}
+.box-search .form-group {
+	position: relative;
+	top:15px;
+	margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+	.box-search .form-group {
+		padding-right: 188px;
+	}
+}
+.box-search .form-group .btn-submit {
+	font-size: 16px !important;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.box-search .form-group .btn-submit {
+		position: absolute !important;
+		top: 0;
+		right: 0;
+		width: auto;
+	}
+
+}
+.box-search .btn-new-search {
+	margin-top: 40px;
+}
+.box-search .form-group .btn-success {
+	color: #fff;
+	right: 0 !important;
+	width: 100%;
+	bottom: 5px;
+	padding: 3px 0 !important;
+}
+@media (min-width: 768px) {
+	.box-search .form-group .btn-success {
+		right: 50px !important;
+		padding: 3px 8px !important;
+		width: auto;
+		bottom: 0;
+	}
+	.box-search .form-group .btn-danger {
+		margin-top: 0;
+	}
+}
+.box-search .form-group .btn-danger {
+	margin-top: 5px;
+}
+.box-search .text-center {
+	text-align: center;
+	padding: 60px 0 20px 0;
+}
+
+.box-search .input-group {
+	position: relative;
+	display: block;
+	border-collapse: separate;
+}
+@media (min-width: 768px) {
+	.box-search .input-group {
+		display: table;
+	}
+}
+.box-search .input-group .form-control, .box-search .input-group-addon, .box-search .input-group-btn {
+	display: table-cell;
+}
+.box-search .input-group-addon, .box-search .input-group-btn {
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.box-search .input-group-addon {
+	padding: 11px 17px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
+	color: @ylopoGreen;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+	.box-search .input-group-addon {
+		display: none !important;
+	}
+}
+.box-search .input-group-addon:first-child {
+	border-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.box-search .input-group .form-control,
+.box-search .input-group-addon,
+.box-search .input-group-btn {
+	display: table-cell;
+}
+.box-search .input-group .form-control {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 100%;
+
+}
+@media (min-width: 768px) {
+	.box-search .input-group .form-control {
+		border-left: none;
+		border-radius: 0 4px 4px 0;
+		margin-bottom: 0;
+	}
+}
+.box-search .form-control {
+	display: block;
+	width: 100%;
+	padding: 11px 17px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-search-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-search-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-search-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-search-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-search-shadow ease-in-out .15s;
+	margin-bottom: 10px;
+}
+.box-search .input-group .form-control {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 100%;
+}
+.start-new-search {
+	display: block;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.start-new-search {
+		display: inline-block;
+		width: auto;
+	}
+}

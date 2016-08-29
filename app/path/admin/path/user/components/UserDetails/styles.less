@@ -1,0 +1,33 @@
+@import '../../../../../../assets/styles/functions.less';
+@import '../../../../../../assets/styles/variables.less';
+
+.user-details {
+	padding-bottom: 20px;
+
+	&.user-details-loading {
+		.custom-loader .loader {
+			background: #fff;
+		}
+	}
+}
+
+.list-field {
+
+	.list-field-item {
+		position: relative;
+	}
+
+	.add-btn-wrapper {
+		position: absolute;
+		top: 14px;
+		right: 27px;
+		z-index:2;
+	}
+
+	.delete-btn-wrapper {
+		position: absolute;
+		top: 22px;
+		right: 0;
+		z-index:2;
+	}
+}

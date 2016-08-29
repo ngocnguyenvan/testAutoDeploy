@@ -1,0 +1,38 @@
+{
+
+	"active": true,
+	"creationDate": "2015-06-22T19:12:09.596Z",
+	"emailAddress": "ben+person1@ylopo.com",
+	"exclusiveClientAssignedId": 10113,
+	"firstName": "Ben",
+	"flags": null,
+	"id": 1,
+	"label": "Ben Arwin",
+	"lastName": "Arwin",
+	"lastRoutedDate": null,
+	"lastUpdateDate": "2016-04-24T02:36:12.502Z",
+	"leads": [],
+	"lenderAssigned": true,
+	"marketingTrackingId": 0,
+	"partyId": 10121,
+	"partyWebsiteId": 10121,
+	"phoneNumber": "7345551212",
+	"profile": {
+		"foo": "bar",
+		"more": "stuff",
+		"one": {
+			"two": {
+				"three": "foobar"
+			}
+		}
+	},
+	"routing": null,
+	"sourceCode": "test",
+	"stats": {
+		"one": "this is first stat",
+		"two": {
+			"deep": {}
+		}
+	},
+	"uuid": "b511b0c4-521a-4fca-8da6-0a14ad5ca56d"
+}

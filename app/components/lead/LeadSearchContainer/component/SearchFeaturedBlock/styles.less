@@ -1,0 +1,66 @@
+@import '../../../../../assets/styles/functions.less';
+@import '../../../../../assets/styles/variables.less';
+
+.bordered-content-block{
+	border: 1px solid rgb(149,149,149);
+	margin: 20px 0;
+	h4{
+		width: 100%;
+		font-size: 20px;
+		background-color: rgb(149,149,149);
+		color: rgb(255,255,255);
+		padding: 5px 10px;
+	}
+	.content{
+		padding: 15px 20px;
+		.displayFlex();
+		.flexFlow(row, wrap);
+		.amenity{
+			margin: 6px 0;
+			width: 100%;
+			@media(min-width: 480){
+				width: 50%;
+			}
+			@media(min-width: 768px){
+				width: 33.33%;
+			}
+			.displayFlex();
+			.alignItems(center);
+		}
+		input{
+			margin-right: 5px;
+			height: 15px;
+			width: 15px;
+			padding: 0;
+			margin-bottom: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border-radius: 0;
+			border: 1px solid rgb(129,129,129);
+			cursor: pointer;
+			&:checked{
+				background-color: rgb(129,129,129);
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+			}
+			&:focus, &:active{
+				outline: none;
+			}
+		}
+	}
+	.feature-checkbox {
+		position: relative !important;
+		cursor: pointer !important;
+		overflow: visible !important;
+		display: inline-block !important;
+		height: auto !important;
+		width: 100% !important;
+		margin-bottom: 20px;
+		font-size: 14px;
+		@media (min-width: 768px) {
+			width: 33% !important;
+		}
+	}
+}

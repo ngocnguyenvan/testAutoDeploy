@@ -1,0 +1,25 @@
+@import '../../../../../assets/styles/functions.less';
+@import '../../../../../assets/styles/variables.less';
+
+.searchField {
+	.displayFlex();
+	.flexFlow(column, nowrap);
+	.alignItems(flex-start)!important;
+	width: 100%;
+	input {
+		width: 100%;
+		border-radius: 2px;
+		background-color: rgb(255,255,255);
+		border: 1px solid rgb(213, 213, 215)!important;
+		padding: 10px 15px 10px 35px;
+		margin-top: 15px;
+		-webkit-appearance:none;
+		-moz-appearance: none;
+		&:focus{
+			outline: 0;
+		}
+	}
+	input[placeholder], [placeholder], *[placeholder] {
+		color: #6c6c6c;
+	}
+}

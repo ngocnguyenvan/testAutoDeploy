@@ -1,0 +1,18 @@
+{
+	"verbose": true,
+	"ignore": [
+		".git",
+		"node_modules",
+		"server/static",
+		"build/"
+	],
+	"watch": [
+		"config/",
+		"services/",
+		"server/"
+	],
+	"execMap": {
+		"js": "node --expose_debug_as=v8debug"
+	},
+	"ext": "js jsx json"
+}

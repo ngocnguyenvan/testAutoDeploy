@@ -1,0 +1,51 @@
+@import '../../assets/styles/variables.less';
+@import '../../assets/styles/functions.less';
+
+.auth-page {
+	font-size: 12px;
+	width: 100%;
+	min-height: 100vh;
+	overflow: scroll;
+
+	/* note due to webpack source maps we are making this static to root instead of the preferred relative to a directory in this component */
+	background-image: url( '/assets/images/mockup-3-50.jpg' );
+	background-size: cover;
+	background-position: center;
+
+
+	.floating-form {
+		background-color: @white;
+		position: absolute;
+		margin: 6% auto;
+		padding: 36px;
+		width: 320px;
+		left: 0;
+		right: 0;
+
+		.logo {
+			padding: 0 20px 20px 20px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.pb-container {
+			padding: 20px 0 0 0;
+		}
+
+		.footer {
+			position: relative;
+			top: 30px;
+			text-align: center;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.floating-form {
+			position: absolute;
+			right: 8%;
+			left: initial;
+		}
+	}
+}
