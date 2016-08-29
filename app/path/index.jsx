@@ -10,7 +10,7 @@ export default class Default extends React.Component {
 			<div style={{ padding: 20 }}>
 			Welcome to Stars.  To view a lead's details, use the deep link provided to you via email or CRM integration.
 			<br/><br/>
-			ssssssssss <a href="mailto:support@ylopo.com">support@ylopo.com</a>
+			hahhah <a href="mailto:support@ylopo.com">support@ylopo.com</a>
 			</div>
 		</div>;
 	}
