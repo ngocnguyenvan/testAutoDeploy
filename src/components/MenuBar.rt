@@ -1,0 +1,133 @@
+<rt-import name="MultiSelectBox" from="./dathena/multiselectBox"/>
+<rt-import name="FilterLabel" from="./dathena/FilterLabel"/>
+<rt-import name="func" from="../utils/function" />
+<div rt-scope="this.state.scanResult as scanResult">
+<div class="my_main bar_menu container">
+    <div class="row">
+        <div class="col-md-12 mb-md">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p class="page-heading-sm">{this.props.title}</p>
+                    <div class="filter-tags-block">
+                        <label rt-if="this.state.filter.labels.length > 0" class="pull-left mr-md">Filters:</label>
+                        <div rt-scope="this.state.filter.labels as listLabel" class="pull-left filter-tags" style="text-transform: capitalize">
+                            <FilterLabel data={listLabel} onClick={this.onClickLabel} onClear={this.onclearFilter} />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="filter-buttons pull-right">
+                        <li rt-if="this.props.showFilter" class="dropdown">
+                            <a class="toggle-button btn btn-default"><i class="fa fa-filter" aria-hidden="true"></i></a>
+                            <div class="dropdown-backdrop-custom" style="display:none"></div>
+                            <div id="dropdownFilter" class="dropdown-menu has-child has-arrow dd-md dd-right dd-filter">
+                                <ul class="filter-list list-unstyled pt-xs" rt-scope=" this.state.listLabel as listLabel ">
+                                    <li class="mb-sm">
+                                        <div class="form-group">
+                                            <MultiSelectBox
+                                                id="confidentialities"
+                                                title="Confidentiality"
+                                                onChange={this.handleSelectBoxChange}
+                                                onSelectAll={this.handleSelectAll}
+                                                checkDefault={true}
+                                                data={listLabel.confidentialities} />
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="mb-sm">
+                                        <div class="form-group">
+                                            <MultiSelectBox
+                                                id="categories"
+                                                title="Category"
+                                                onChange={this.handleSelectBoxChange}
+                                                onSelectAll={this.handleSelectAll}
+                                                checkDefault={true}
+                                                data={listLabel.categories} />
+                                        </div>
+                                    </li>
+                                    <li class="mb-sm">
+                                        <div class="form-group">
+                                            <MultiSelectBox
+                                                id="languages"
+                                                title="Languages"
+                                                onChange={this.handleSelectBoxChange}
+                                                onSelectAll={this.handleSelectAll}
+                                                checkDefault={true}
+                                                data={listLabel.languages} />
+                                        </div>
+                                    </li>
+                                    <li class="mb-sm">
+                                        <div class="form-group">
+                                            <MultiSelectBox
+                                                id="doc-types"
+                                                title="Document Type"
+                                                onChange={this.handleSelectBoxChange}
+                                                onSelectAll={this.handleSelectAll}
+                                                checkDefault={true}
+                                                data={listLabel['doc-types']} />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li rt-if="this.props.showInfo" class="dropdown">
+                            <a data-toggle="dropdown" class="toggle-button btn btn-default fix-center-info-toggle-button"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                            <div class="dropdown-menu has-arrow dd-md full-mobile dd-right">
+                                <div class="table-responsive">
+                                    <table class="table general-table mb-none">
+                                        <tbody>
+                                        <tr>
+                                            <td>Last Data Scan:</td>
+                                            <td colspan="3">{scanResult.last_data_scan}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country in Scope:</td>
+                                            <td colspan="3">{scanResult.country}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Business in Scope:</td>
+                                            <td colspan="3" style="text-transform: capitalize">{scanResult.business_unit}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Scan Status:</td>
+                                            <td colspan="3" style="text-transform: capitalize">{scanResult.scan_status}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Documents Analyzed:</td>
+                                            <td colspan="3">{func.formatNumber(scanResult.total_documents_scanned)}</td>
+                                        </tr>
+                                        <tr>
+                                        <td>File Extension Processed:</td>
+                                            <td colspan="3">{scanResult.file_extensions_processed}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Duplicate Documents:</td>
+                                            <td colspan="3">{func.formatNumber(scanResult.total_duplicates)}</td>
+                                        </tr>
+                                        <tr>
+                                        <td>Twins Documents:</td>
+                                            <td colspan="3">{func.formatNumber(scanResult.total_twins)}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Encrypted Documents or Archives:</td>
+                                            <td colspan="3">{func.formatNumber(scanResult.encrypted_documents)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Documents Skipped:</td>
+                                            <td colspan="3">{func.formatNumber(scanResult.documents_skipped)}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+</div>

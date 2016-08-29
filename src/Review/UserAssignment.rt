@@ -1,0 +1,285 @@
+<rt-import name="SelectButton" from="../components/dathena/SelectButton"/>
+<rt-import name="SelectBox" from="../components/dathena/SelectBox"/>
+<rt-import name="FilterLabel" from="../components/dathena/FilterLabel"/>
+<rt-import name="ValidationButton" from="../components/dathena/ValidationButton"/>
+<rt-import name="PieChart" from="../components/chart/PieChart"/>
+<rt-import name="ColumnChart" from="../components/chart/ColumnChart"/>
+<rt-import name="HelpButton" from="../components/dathena/HelpButton"/>
+<rt-import name="BarChart" from="../components/chart/BarChart"/>
+<section>
+  <div class="container">
+      <div class="tabs tabs-primary">
+        <ul class="nav nav-tabs cat-list">
+          <li rt-repeat="category in this.state.category.list" key="{categoryIndex}" class="{this.state.category.current.id == category.id && 'active'}">
+            <a id="{'Category_' + category.id}" href="#categoryInfo" onClick="()=>this.setCategoryCurrent(categoryIndex)" data-toggle="tab" aria-expanded="true" style="text-transform: capitalize">{category.name}</a>
+          </li>
+          <li class="">
+            <a id='summarytab' href="#summary" onClick={this.getSummary} data-toggle="tab" aria-expanded="false">Summary</a>
+          </li>
+          
+        </ul>
+        <div class="help_guide_sub tab-content">
+          <div id="categoryInfo" class="help_guide tab-pane active">
+            <div class="row">
+              <div class="col-md-3">
+                <section class="panel panel-featured panel-featured-primary panel-featured-compact panel-bordered">
+                  <header class="panel-heading">
+                      <h2 class="panel-title">Sample Parameters 
+                          <HelpButton
+                              classNote="note_chart_content"
+                              setValue="This will determine the size of the document sample, which will generate the list of documents to be reviewed {this.state.category.current.name} category." />
+                      </h2>
+                      <div class="panel-actions collapse-stat-table fix-arrow-collapse-stat-table">
+                          <a class="panel-action panel-action-toggle fix-arrow-panel-action-toggle collapse" data-toggle="collapse" data-target="#panelParameter"></a>
+                      </div>
+                  </header>
+                  <div id="panelParameter" class="panel-body sample-params nav-collapse collapse in">
+                    <div class="form-group">
+                      <label class="">Fixed Number of Document</label>
+                      <select name="state" class="form-control ddList">
+                       <option rt-repeat="docPercentage in this.state.category.info.doc_percentage " class="lt" key="{docPercentageIndex}" value="{docPercentageIndex}">{docPercentage.number_docs} Documents ({docPercentage.percentage}%)</option>
+                      </select>
+                      <ValidationButton
+                          id='category'
+                          onClick={this.handleOnClickValidationButton}
+                          status={this.state.buttonStatus.category} />
+                    </div>
+                    <div class="or-divider"><span>OR</span></div>
+                    <div class="form-group">
+                      <label class="">As % of overall {this.state.category.current.name} Category</label>
+                      <select name="state" class="form-control ddList">
+                        <option rt-repeat="percentageDoc in this.state.category.info.percentage_doc " class="lt" key="{percentageDocIndex}" value="{percentageDocIndex}">{percentageDoc.percentage}% ({percentageDoc.number_docs} Documents)</option>
+                      </select>
+                      <ValidationButton
+                          id='fixedNumber'
+                          onClick={this.handleOnClickValidationButton}
+                          status={this.state.buttonStatus.fixedNumber} />
+                    </div>
+                  </div>
+                </section>
+              </div>    
+
+              <div class="col-md-9">
+                <section class="panel panel-featured panel-featured-primary panel-featured-compact panel-bordered">
+                  <header class="panel-heading">
+                      <h2 class="panel-title">Document Category Information</h2>
+                      <div class="panel-actions collapse-stat-table fix-arrow-collapse-stat-table">
+                          <span>Number of Documents: <strong>{this.addCommas(this.state.category.info.number_docs)}</strong></span>
+                          <a class="panel-action panel-action-toggle fix-arrow-panel-action-toggle collapse" data-toggle="collapse" data-target="#panelCategoryInfo"></a>
+                      </div>
+                  </header>
+                  <!--<div class="panel-body">
+                    <span>Number of Documents: {this.addCommas(this.state.category.info.number_docs)}</span>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h4 class="chart-title">Confidentiality Overview</h4>
+                        <div class="chart-container">
+                          <div id="confidentialityChartLegend" class="document-chart"></div>
+                          <div id="confidentialityOverviewChart" class="document-chart"></div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <h4 class="chart-title">Document Type per Confidentiality Level</h4>
+
+                        <div id="confidentialityLevelChart" class="document-chart"></div>
+                      </div>
+                    </div>-->
+                    <div id="panelCategoryInfo" class="panel-body tab-content tab-pane nav-collapse collapse in">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <PieChart
+                              id="confidentialityChart"
+                              title="Confidentiality Overview"
+                              data={this.state.dataChart.confidentiality}
+                              help="Distributions in term of confidentiality ratings assigned to all the documents within the {this.state.category.current.name} category." />
+                        </div>
+                        <div class="col-sm-6">
+                          <ColumnChart
+                              id="confidentialityLevelChart"
+                              title="Document Type per Level of Confidentiality"
+                              categories={this.state.dataChart.documentType.categories}
+                              series={this.state.dataChart.documentType.series}
+                              help="Summary of the Confidentiality ratings assigned to each document type for the document within the {this.state.category.current.name} category." />
+                        </div>
+                      </div>
+                    </div>
+                </section>
+              </div>  
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <section class="panel panel-featured panel-featured-primary panel-featured-compact panel-bordered">
+                  <header class="panel-heading">
+                      <h2 class="panel-title">User Selection
+                        <HelpButton
+                              classNote="note_chart_content"
+                              setValue="You have to chose the user assigned to review the sample of document in the {this.state.category.current.name} category." />
+                      </h2>
+                      <div class="panel-actions collapse-stat-table fix-arrow-collapse-stat-table">
+                          <a class="panel-action panel-action-toggle fix-arrow-panel-action-toggle collapse" data-toggle="collapse" data-target="#panelUserSelection"></a>
+                      </div>
+                  </header>
+                  <div id="panelUserSelection" class="panel-body nav-collapse collapse in">
+                    <div class="row">
+                      <div class="col-xs-12">
+                          <div class="row mt-md">
+                            <div class="col-xs-8">
+                              <div class="clearfix">
+                                <h4 class="chart-title pull-left mt-sm mr-md">Users
+                                  <HelpButton
+                                    classNote="note_chart_content"
+                                    setValue="Most active users creating or modifying (depending on the type of Reviewer chose) {this.state.category.current.name} document" />
+                                </h4>
+                                <ul class="filter-buttons list-unstyled pull-left">
+                                    <li class="dropdown">
+                                      <a class="toggle-button btn btn-default"><i class="fa fa-filter" aria-hidden="true"></i></a>
+                                        <div class="dropdown-backdrop-custom" style="display:none"></div>
+                                        <div class="dropdown-menu has-child has-arrow dd-md" style="max-width: 560px;">
+                                            <ul class="filter-list list-unstyled pt-xs">
+                                                <li>
+                                                  <SelectBox
+                                                    id={this.static.selectId.timeframe}
+                                                    name="timeframe"
+                                                    data={this.state.datafilter.timeFrame}
+                                                    value={this.state.datafilter.setValue.timeframe}
+                                                    defaultValue={0}
+                                                    className="assignent-select form-control ddList"
+                                                    onChange={this.handleOnChangeSelectBox} />
+                                                </li>
+                                                <li>
+                                                <SelectBox
+                                                    id={this.static.selectId.numberuser}
+                                                    name="usersnum"
+                                                    data={this.state.datafilter.usersNumber}
+                                                    value={this.state.datafilter.setValue.numberuser}
+                                                    defaultValue={0}
+                                                    className="assignent-select form-control ddList"
+                                                    onChange={this.handleOnChangeSelectBox} />
+                                                </li>
+                                                <li>
+                                                  <SelectBox
+                                                    id={this.static.selectId.reviewertype}
+                                                    name="reviewertype"
+                                                    data={this.state.datafilter.reviewerType}
+                                                    value={this.state.datafilter.setValue.reviewertype}
+                                                    defaultValue={0}
+                                                    className="assignent-select form-control ddList"
+                                                    onChange={this.handleOnChangeSelectBox} />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="filter-tags-block pull-left">
+                                    <div class="pull-left filter-tags">
+                                      <FilterLabel
+                                          data={this.state.datafilter.filterLabel}
+                                          onClick={this.handleClickFilterLabel} />
+                                    </div>
+                                </div>
+                              </div>
+                              <BarChart
+                                  id="userReviewBarChart"
+                                  config={this.state.dataChart.barChart.config}
+                                  categories={this.state.dataChart.barChart.categories}
+                                  data={this.state.dataChart.barChart.data} />
+                            </div>
+                            <div class="col-xs-4 select-reviewers">
+                                <h4 class="chart-title" style="margin-bottom:3px">Select the Reviewer(s)
+                                  <HelpButton
+                                    classNote="note_chart_content_review"
+                                    setValue="Users who are selected will have to review the sample of document in {this.state.category.current.name}" />
+                                </h4>
+                                <SelectButton
+                                    key="{'select_all'}"
+                                    title="Select All"
+                                    setSelected="{this.state.datafilter.request.reviewers.length >= this.state.category.reviewers.length ? 'on' : 'off'}"
+                                    onChange="(e)=>this.handleOnChangeSelectAll(e)" />
+                                <SelectButton
+                                    rt-repeat="review in this.state.category.reviewers"
+                                    key="{'select_' + reviewIndex}"
+                                    title="{ review.first_name + '.' + review.last_name }"
+                                    setSelected="{_.findIndex(this.state.datafilter.request.reviewers, {id: review.id}) == -1 ? 'off' : 'on'}"
+                                    onChange="(e)=>this.handleOnChangeSelectButton(e, reviewIndex)" />
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="pull-right">
+                      <button
+                          class="btn btn-green btn-ok mb-sm mt-md {this.state.datafilter.request.reviewers.length <= 0 && 'disabled'}"
+                          type="button"
+                          onClick={this.handleValidateButton}>
+                          Validate and Go to Next Category
+                      </button>
+                    </div>
+              </section>
+            </div>
+          </div>
+          </div>
+          <div id="summary" class="tab-pane">
+            <section rt-repeat="summary in this.state.summary.data" class="panel panel-featured panel-featured-primary panel-featured-compact panel-bordered">
+              <header class="panel-heading">
+                  <h2 class="panel-title" style="text-transform: capitalize">{summary.name}</h2>
+                  <div class="panel-actions">
+                      <a href="#" class="panel-action panel-action-toggle" data-panel-toggle=""></a>
+                  </div>
+              </header>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-condensed table-reviewer-summary">
+                    <thead>
+                      <tr>
+                        <th class="col20"></th>
+                        <th class="col40">Number of Assigned Reviewers:</th>
+                        <th class="col15">Documents Sampled</th>
+                        <th class="col25">Total Number of Documents Classified</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <td class="no-border-top border-bottom" style="text-transform: capitalize">{summary.name}</td>
+                          <td class="no-border-top"><span class="assigned-num">{summary.reviewers.length}</span> <a data-toggle="collapse" data-target="#reviewerList{summaryIndex+1}" class="accordion-toggle ml-md"><i class="fa fa-plus-square" aria-hidden="true"></i></a></td>
+                          <td class="no-border-top text-center">{summary.docs_sampled}</td>
+                          <td class="no-border-top text-center">{this.addCommas(summary.total_number_document_classified)}</td>
+                      </tr>
+                      <tr class="child-table">
+                        <td colspan="4" class="hiddenRow">
+                          <div class="accordian-body collapse in" id="reviewerList{summaryIndex+1}"> 
+                            <table class="table">
+                              <tbody>
+                                <tr rt-repeat="viewer in summary.reviewers">
+                                  <td class="col20 no-border-top"></td>
+                                  <td class="col40" style="text-transform: capitalize">{viewer.first_name}.{viewer.last_name} (Last Modified)</td>
+                                  <td class="col15"></td>
+                                  <td class="col25 chart-col">
+                                    <div class="progress progress-xl progress-squared light">
+                                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {viewer.number_docs/summary.total_number_document_classified*100}%;">
+                                          <span class="percent">{viewer.number_docs}</span>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          
+                          </div> 
+                         </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <div class="clearfix">
+              <div class="pull-right">
+                <button class="btn btn-green btn-ok mb-sm mt-md" type="button">Confirm and Notify all Reviewers</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

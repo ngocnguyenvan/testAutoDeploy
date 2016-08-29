@@ -1,0 +1,174 @@
+<section>
+	<div class="my_main bar_menu container">
+            <div class="row">
+                <div class="col-md-9 mb-md">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p class="page-heading-sm pull-left" rt-props="">My Notifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification-list container">
+            <div class="notification-filter row">
+                <div class="col-sm-5 mb-md">
+                    <label>Last update</label>
+                    <select class="form-control filter-noti" onChange={this.filterNotification} value={this.state.filterUpdate}>
+                        <option value="update-today">Today</option>
+                        <option value="update-week">Last 7 Days</option>
+                        <option value="update-default" >Last 30 Days</option>
+                        <option value="update-pending">Pending Actions</option>
+                        <option value="update-completed">Completed Actions</option>
+                    </select>
+                </div>
+                <div class="col-sm-7 mb-md">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>Action completed on time: <b>100%</b></span>  
+                        </div>
+                        <div class="col-sm-4">
+                        <span class="mr-md">Pending Actions: <b>{this.state.total}</b></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span class="mr-md"><i class="fa fa-exclamation-triangle fa-alert-warning filter-noti-icon" data-type="hight" onClick={this.filterAlert}></i> : {this.state.warningNoti}</span>
+                            <span class="mr-md"><i class="fa fa-exclamation-triangle fa-alert-danger filter-noti-icon" data-type="very hight" onClick={this.filterAlert}></i> : {this.state.dangerNoti}</span>
+                            <div class="inline-block-item dropdown dropdown-help">
+                                <a data-toggle="dropdown" class="overview_question_a" aria-expanded="false"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                <div class="dropdown-menu has-arrow dd-md full-mobile">
+                                    <p>Help content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="panel panel-featured panel-featured-primary panel-noti" rt-if="this.state.notification.today.length" data-last-update="update-today">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Today</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="noti-item" data-noti-type="{notification.urgency}" rt-repeat="notification in this.state.notification.today" key="{notification.id}" data-update-status="{ notification.urgency === 'done' ? 'update-completed' : 'update-pending'}">
+                        <span class="noti-left">
+                            <i class="fa" rt-class="{'fa-check icon-success': notification.urgency === 'done',
+                                                     'fa-clock-o': notification.urgency === 'low',
+                                                     'fa-clock-o icon-warning': notification.urgency === 'hight',
+                                                     'fa-clock-o icon-danger': notification.urgency === 'very hight'}">
+                            </i>
+                        </span>
+                        <span class="noti-center">
+                            {notification.message}
+                        </span>
+                        <span class="noti-right">
+                            <i class="fa " rt-if="notification.urgency !== 'done'"
+                                rt-class="{'fa-alert-danger fa-exclamation-triangle': notification.urgency === 'very hight', 'fa-alert-warning fa-exclamation-triangle': notification.urgency === 'hight' }"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="" ></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel panel-featured panel-featured-primary panel-noti" rt-if="this.state.notification.yesterday.length" data-last-update="update-yesterday">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Yesterday</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="noti-item" data-noti-type="{notification.urgency}" rt-repeat="notification in this.state.notification.yesterday" key="{notification.id}" data-update-status="{ notification.urgency === 'done' ? 'update-completed' : 'update-pending'}">
+                        <span class="noti-left">
+                            <i class="fa" rt-class="{'fa-check icon-success': notification.urgency === 'done',
+                                                     'fa-clock-o': notification.urgency === 'low',
+                                                     'fa-clock-o icon-warning': notification.urgency === 'hight',
+                                                     'fa-clock-o icon-danger': notification.urgency === 'very hight'}">
+                            </i>
+                        </span>
+                        <span class="noti-center">
+                            {notification.message}
+                        </span>
+                        <span class="noti-right">
+                            <i class="fa " rt-if="notification.urgency !== 'done'"
+                                rt-class="{'fa-alert-danger fa-exclamation-triangle': notification.urgency === 'very hight', 'fa-alert-warning fa-exclamation-triangle': notification.urgency === 'hight' }"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="" ></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel panel-featured panel-featured-primary panel-noti" rt-if="this.state.notification.last_7_days.length" data-last-update="update-week">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Last 7 days</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="noti-item" data-noti-type="{notification.urgency}" rt-repeat="notification in this.state.notification.last_7_days" key="{notification.id}" data-update-status="{ notification.urgency === 'done' ? 'update-completed' : 'update-pending'}">
+                        <span class="noti-left">
+                            <i class="fa" rt-class="{'fa-check icon-success': notification.urgency === 'done',
+                                                     'fa-clock-o': notification.urgency === 'low',
+                                                     'fa-clock-o icon-warning': notification.urgency === 'hight',
+                                                     'fa-clock-o icon-danger': notification.urgency === 'very hight'}">
+                            </i>
+                        </span>
+                        <span class="noti-center">
+                            {notification.message}
+                        </span>
+                        <span class="noti-right">
+                            <i class="fa " rt-if="notification.urgency !== 'done'"
+                                rt-class="{'fa-alert-danger fa-exclamation-triangle': notification.urgency === 'very hight', 'fa-alert-warning fa-exclamation-triangle': notification.urgency === 'hight' }"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="" ></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel panel-featured panel-featured-primary panel-noti" rt-if="this.state.notification.last_30_days.length" data-last-update="update-older">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Last 30 days</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="noti-item" data-noti-type="{notification.urgency}" rt-repeat="notification in this.state.notification.last_30_days" key="{notification.id}" data-update-status="{ notification.urgency === 'done' ? 'update-completed' : 'update-pending'}">
+                        <span class="noti-left">
+                            <i class="fa" rt-class="{'fa-check icon-success': notification.urgency === 'done',
+                                                     'fa-clock-o': notification.urgency === 'low',
+                                                     'fa-clock-o icon-warning': notification.urgency === 'hight',
+                                                     'fa-clock-o icon-danger': notification.urgency === 'very hight'}">
+                            </i>
+                        </span>
+                        <span class="noti-center">
+                            {notification.message}
+                        </span>
+                        <span class="noti-right">
+                            <i class="fa " rt-if="notification.urgency !== 'done'"
+                                rt-class="{'fa-alert-danger fa-exclamation-triangle': notification.urgency === 'very hight', 'fa-alert-warning fa-exclamation-triangle': notification.urgency === 'hight' }"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="" ></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel panel-featured panel-featured-primary panel-noti" rt-if="this.state.notification.older.length" data-last-update="update-older">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Older</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="noti-item" data-noti-type="{notification.urgency}" rt-repeat="notification in this.state.notification.older" key="{notification.id}" data-update-status="{ notification.urgency === 'done' ? 'update-completed' : 'update-pending'}">
+                        <span class="noti-left">
+                            <i class="fa" rt-class="{'fa-check icon-success': notification.urgency === 'done',
+                                                     'fa-clock-o': notification.urgency === 'low',
+                                                     'fa-clock-o icon-warning': notification.urgency === 'hight',
+                                                     'fa-clock-o icon-danger': notification.urgency === 'very hight'}">
+                            </i>
+                        </span>
+                        <span class="noti-center">
+                            {notification.message}
+                        </span>
+                        <span class="noti-right">
+                            <i class="fa " rt-if="notification.urgency !== 'done'"
+                                rt-class="{'fa-alert-danger fa-exclamation-triangle': notification.urgency === 'very hight', 'fa-alert-warning fa-exclamation-triangle': notification.urgency === 'hight' }"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="" ></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <p class='center' id="emptyData" style="display: none; font-size:20px">There is no notification for the applied filters</p>
+        </div>
+</section>
