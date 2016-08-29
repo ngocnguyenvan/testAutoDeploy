@@ -81,7 +81,7 @@ $(function () {
 
   var cloudRendered = false;
   var drawCloud = function(){
-    if (!cloudRendered){
+    if (!cloudRendered && $("#words-cloud").length){
       $("#words-cloud").jQCloud(word_list,{
         afterCloudRender: function(){
           cloudRendered = true;
@@ -302,7 +302,7 @@ $(function () {
   }];
 
   var div = $('#confidentialityChart');
-  var parentDiv = div.parents('#distribution');
+  var parentDiv = div.closest('.tab-pane');
   if (div.length){
     div.highcharts({
       chart: {
