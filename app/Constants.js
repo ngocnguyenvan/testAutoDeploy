@@ -11,8 +11,7 @@ export var EditMode = keyMirror({
 	LOAD: null,
 	UPDATE: null,
 	CREATE: null,
-	DELETE: null,
-	s:null
+	DELETE: null
 });
 
 export var ServerStatuses = keyMirror({
