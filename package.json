@@ -1,0 +1,29 @@
+{
+  "name": "test-auto-deploy",
+  "version": "1.0.0",
+  "description": "test auto deploy",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "test auto deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngocnguyenvan/testAutoDeploy.git"
+  },
+  "author": "NgocNguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngocnguyenvan/testAutoDeploy/issues"
+  },
+  "homepage": "https://github.com/ngocnguyenvan/testAutoDeploy#readme",
+   "dependencies": {
+    "axios": "^0.7.0",
+  },
+  "devDependencies": {
+    "uglifyjs": "^2.4.10",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0",
+    "webpack-stats-plugin": "0.1.3"
+  }
+}
