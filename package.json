@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ngocnguyenvan/testAutoDeploy#readme",
   "devDependencies": {
    	"react": "^0.13.3",
-    "reactify": "^1.1.1"
+    "reactify": "^1.1.1",
+    "browserify": "^10.2.1"
   }
 }
