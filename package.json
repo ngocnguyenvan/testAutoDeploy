@@ -23,6 +23,7 @@
     "gulp": "^3.8.11",
     "gulp-streamify": "0.0.5",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.1"
+    "watchify": "^3.2.1",
+    "object-assign": "^2.0.0",
   }
 }
