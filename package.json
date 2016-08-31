@@ -20,6 +20,7 @@
    	"react": "^0.13.3",
     "reactify": "^1.1.1",
     "browserify": "^10.2.1",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-streamify": "0.0.5"
   }
 }
