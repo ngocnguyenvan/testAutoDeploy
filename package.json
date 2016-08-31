@@ -23,7 +23,6 @@
     "uglifyjs": "^2.4.10",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.0",
     "webpack-stats-plugin": "0.1.3"
   }
 }
