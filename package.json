@@ -16,13 +16,8 @@
     "url": "https://github.com/ngocnguyenvan/testAutoDeploy/issues"
   },
   "homepage": "https://github.com/ngocnguyenvan/testAutoDeploy#readme",
-   "dependencies": {
-    "axios": "^0.7.0"
-  },
   "devDependencies": {
-    "uglifyjs": "^2.4.10",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-stats-plugin": "0.1.3"
+   	"react": "^0.13.3",
+    "reactify": "^1.1.1"
   }
 }
