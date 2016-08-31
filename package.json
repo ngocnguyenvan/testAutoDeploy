@@ -28,6 +28,7 @@
     "flux": "^2.0.3",
     "gulp-uglify": "^1.2.0",
     "axios": "^0.7.0",
-    "config": "^1.21.0"
+    "config": "^1.21.0",
+    "connect-redis": "^3.1.0"
   }
 }
