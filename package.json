@@ -27,6 +27,7 @@
     "object-assign": "^2.0.0",
     "flux": "^2.0.3",
     "gulp-uglify": "^1.2.0",
-    "axios": "^0.7.0"
+    "axios": "^0.7.0",
+    "config": "^1.21.0"
   }
 }
