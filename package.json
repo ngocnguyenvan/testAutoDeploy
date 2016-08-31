@@ -21,6 +21,7 @@
     "reactify": "^1.1.1",
     "browserify": "^10.2.1",
     "gulp": "^3.8.11",
-    "gulp-streamify": "0.0.5"
+    "gulp-streamify": "0.0.5",
+    "watchify": "^3.2.1"
   }
 }
