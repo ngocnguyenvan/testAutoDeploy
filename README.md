@@ -63,6 +63,7 @@
     |       ...
 │   ├── pages or path           // root "pages" based upon the routing of the application. [TODO] needs more structure                
         ├── ylopoUI
+        
 │   ├── stores                 // flux stores
 │   └── utils     
 ├── server                     // all server side code
