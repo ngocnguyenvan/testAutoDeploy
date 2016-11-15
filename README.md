@@ -39,7 +39,32 @@
             ├── updateUser()  
             ├── updateUserSuccess()  
             ├── updateUserFailed()  
-
+    ├── assets                 // shared assets (images, styles)
+│   ├── components             // grouped components based upon focus
+    |   ├── core                  // Contains components core: ex Button, Checkbox, Block, Table....                     
+    |       ├── Button            // Component Button
+    |            ├── index.jsx    // the main component JSX file
+    |            ├── style.less   // less styles which will be compiled at deploy time.
+    |       ...
+    |   ├── input                 // Contains components input: FormFields, FormFieldsMaterial 
+    |       ├── FormFields
+    |           ├── index.jsx      
+    |           ├── style.less
+    |       ...
+    |   ├── lead                  // Contains components for Lead: LeadMail, LeadPushNoti, LeadSendMail...
+    |       ├── LeadActivity
+    |           ├── index.jsx
+    |           ├── style.less
+    |       ...
+    |   ├── listings              // Contains components searching result.
+    |       ├── listingsItem
+    |           ├── index.jsx
+    |           ├── style.less
+    |       ...
+│   ├── pages or path           // root "pages" based upon the routing of the application. [TODO] needs more structure                
+        ├── ylopoUI
+│   ├── stores                 // flux stores
+│   └── utils     
 ├── server                     // all server side code
 │   ├── middleware             // custom middleware
 │   ├── routes                 // routes available to the application
